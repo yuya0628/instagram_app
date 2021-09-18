@@ -1,0 +1,7 @@
+h1 instgram_app
+nav
+  - if logged_in?
+    = link_to 'ログアウト',logout_path(current_user), method: :delete,class:"btn btn-primary"
+  - else
+    = link_to 'ログイン', login_path,class:"btn btn-primary"
+    = link_to '新規登録', new_user_path,class:"btn btn-primary"
