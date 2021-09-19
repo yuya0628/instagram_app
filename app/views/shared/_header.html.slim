@@ -1,7 +1,16 @@
-h1 instgram_app
-nav
-  - if logged_in?
-    = link_to 'ログアウト',logout_path(current_user), method: :delete,class:"btn btn-primary"
-  - else
-    = link_to 'ログイン', login_path,class:"btn btn-primary"
-    = link_to '新規登録', new_user_path,class:"btn btn-primary"
+nav.navbar.navbar-expand-lg.navbar-light.bg-white
+  h1=link_to 'instgram_app', "#", class: 'navbar-brand'
+  button.navbar-toggler aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarToggler" data-toggle="collapse" type="button"
+    span.navbar-toggler-icon
+
+  div.collapse.navbar-collapse#navbarToggler
+    =form_with usl: '#', class: 'form-inline my-2 my-lg-0 mr-auto' do |f|
+      =f.text_field :body, class: 'form-control mr-sm-2', placeholder: '本文'
+      =f.submit "SEARCH", class: 'btn btn-outline-success my-2 my-sm-0'
+    ul.navbar-nav.mt-2.mt-lg-0
+      li.nav-item=link_to 'ポスト一覧', '#', class: 'nav-link'
+      - if logged_in?
+        li.nav-item= link_to 'ログアウト', logout_path, class: 'nav-link', method: :delete
+      - else
+        li.nav-item= link_to 'ログイン', login_path(current_user), class: 'nav-link'
+        li.nav-item= link_to '新規登録', new_user_path,class:'nav-link'
