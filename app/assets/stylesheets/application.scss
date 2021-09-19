@@ -14,3 +14,9 @@
  *= require_self
  */
  @import 'bootstrap-material-design/dist/css/bootstrap-material-design';
+ @import 'swiper/swiper-bundle';
+
+ .swiper-container {
+  width: 6px;
+  height: 3px;
+}

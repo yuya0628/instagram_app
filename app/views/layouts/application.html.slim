@@ -6,8 +6,9 @@ html
     = csrf_meta_tags
     = csp_meta_tag
 
-    = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application'
+    
+
+    
   body
 
    = render 'shared/header'
@@ -20,3 +21,6 @@ html
 
    main.container
     = yield
+
+   = stylesheet_link_tag    'application', media: 'all'
+   = javascript_include_tag 'application' 
