@@ -6,21 +6,15 @@ html
     = csrf_meta_tags
     = csp_meta_tag
 
-    
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application' 
 
-    
   body
 
    = render 'shared/header'
+   = render 'shared/flash_messages'
 
-   - if flash.notice.present?
-     .alert.alert-success= flash.notice
-
-   - if flash.alert.present?
-     .alert.alert-danger= flash.alert
 
    main.container
     = yield
 
-   = stylesheet_link_tag    'application', media: 'all'
-   = javascript_include_tag 'application' 

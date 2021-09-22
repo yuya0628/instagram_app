@@ -1,0 +1,12 @@
+  
+
+    .c-image-container
+      .card-img-top.swiper-container
+        .swiper-wrapper
+          - if @post.images.present?
+            - @post.images.each do |image|
+              = image_tag image.url,size: '400x300', class: 'swiper-slide', alt: '@post iamge'
+        - if @post.images.count >= 2
+          .swiper-pagination
+          .swiper-button-prev
+          .swiper-button-next

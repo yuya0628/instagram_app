@@ -83,3 +83,10 @@ gem 'jquery-rails'
 # bootstrap material designのため
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
+
+gem 'carrierwave', '~> 2.0'
+gem 'mini_magick'
+
+gem 'faker'
+
+gem 'font-awesome-sass'

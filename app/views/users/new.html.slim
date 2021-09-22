@@ -1,6 +1,10 @@
  .col-8.mx-auto.mt-5
   .card.mb-3
     = form_with model: @user, local: true, class: 'card-body' do |f|
+      
+      .form-group
+        = f.label :name, class: 'bmd-label-floating'
+        = f.text_field :name, class: 'form-control'
     
       .form-group
         = f.label :email, class: 'bmd-label-floating'

@@ -11,14 +11,14 @@
 // about supported directives.
 //
 
-
 //= require jquery
+
 //= require rails-ujs
 //= require activestorage
 
 
 //= require swiper/swiper-bundle.js
-//= require ogawa.js
+//= require swiper.js
 
 //= require_tree .
 
