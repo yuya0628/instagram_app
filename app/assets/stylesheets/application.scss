@@ -1,0 +1,71 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import 'bootstrap-material-design/dist/css/bootstrap-material-design';
+ @import 'swiper/swiper-bundle';
+ @import 'font-awesome-sprockets'; 
+ @import 'font-awesome';
+
+
+//  たぬき
+ $x: 4px;
+$x2: calc(#{$x} * 2);
+$x3: calc(#{$x} * 3);
+$x4: calc(#{$x} * 4);
+$x5: calc(#{$x} * 5);
+$x6: calc(#{$x} * 6);
+$x7: calc(#{$x} * 7);
+$x8: calc(#{$x} * 8);
+$x9: calc(#{$x} * 9);
+$x10: calc(#{$x} * 10);
+$x11: calc(#{$x} * 11);
+$x12: calc(#{$x} * 12);
+$x13: calc(#{$x} * 13);
+$x14: calc(#{$x} * 14);
+$x15: calc(#{$x} * 15);
+
+// reset -----------------------
+
+$teal: #009688; //TODO: bootstrap のtheme color のteal。デフォルトを書き換えたい
+a {
+  color: $teal;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: $teal; // TODO: --swiper-theme-colorというところで決まっている。デフォルトを置き換える
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $teal;
+}
+
+#header {
+  margin-bottom: $x12
+}
+
+.c-icon-button {
+  display: inline-block;
+  height: $x8;
+  text-align: center;
+  vertical-align: -40%;
+  width: $x8;
+}
+
+.c-image-container {
+  max-width: 400px;
+}
+.post {
+  max-width: 400px;
+}
