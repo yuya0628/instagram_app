@@ -18,54 +18,99 @@
  @import 'font-awesome-sprockets'; 
  @import 'font-awesome';
 
-
-//  たぬき
- $x: 4px;
-$x2: calc(#{$x} * 2);
-$x3: calc(#{$x} * 3);
-$x4: calc(#{$x} * 4);
-$x5: calc(#{$x} * 5);
-$x6: calc(#{$x} * 6);
-$x7: calc(#{$x} * 7);
-$x8: calc(#{$x} * 8);
-$x9: calc(#{$x} * 9);
-$x10: calc(#{$x} * 10);
-$x11: calc(#{$x} * 11);
-$x12: calc(#{$x} * 12);
-$x13: calc(#{$x} * 13);
-$x14: calc(#{$x} * 14);
-$x15: calc(#{$x} * 15);
-
-// reset -----------------------
-
-$teal: #009688; //TODO: bootstrap のtheme color のteal。デフォルトを書き換えたい
-a {
-  color: $teal;
+// ダイ
+ body {
+  position: relative;
+  height: 100vh;
 }
 
-.swiper-button-prev, .swiper-button-next {
-  color: $teal; // TODO: --swiper-theme-colorというところで決まっている。デフォルトを置き換える
+main {
+  padding-top: 50px;
 }
 
-.swiper-pagination-bullet-active {
-  background-color: $teal;
+img {
+  max-width: 100%;
 }
 
-#header {
-  margin-bottom: $x12
+.login-register-form {
+  position: relative;
+  height: 100vh;
+
+  .login-register-form-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
 }
 
-.c-icon-button {
-  display: inline-block;
-  height: $x8;
-  text-align: center;
-  vertical-align: -40%;
-  width: $x8;
+.swiper-container {
+  width: 100%;
 }
 
-.c-image-container {
-  max-width: 400px;
-}
 .post {
   max-width: 400px;
+  margin: 0 auto;
+  .card-img-top {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+  }
+}
+
+.image-thumbnail {
+  object-fit: cover;
+}
+
+.post-detail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &.card {
+    flex-direction: row;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .image-box {
+    width: 400px;
+    height: 400px;
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+    img {
+      object-fit: cover;
+      width: 400px;
+      height: 400px;
+    }
+  }
+  .image-info-box {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+
+    .post-body {
+      overflow: scroll;
+      max-height: 250px;
+    }
+
+    .post-comment {
+      margin-top: auto;
+      .input-comment-body {
+        flex: 1;
+      }
+    }
+  }
+}
+
+.pagination {
+  justify-content: center;
 }
