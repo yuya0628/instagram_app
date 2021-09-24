@@ -1,13 +1,29 @@
-h1 Posts#index
-p Find me in app/views/posts/index.html.slim
-.swiper-container
-      .swiper-wrapper
-        .swiper-slide
-        .swiper-slide
-        .swiper-slide
-      .swiper-pagination
-
-      .swiper-button-prev
-      .swiper-button-next
-
-      .swiper-scrollbar
+.container
+  .row
+    .col-md-8.col-12
+      = render @posts
+      = paginate @posts
+    .col-md-4.col-12
+      - if logged_in?
+        .profile-box.mb-3
+          = image_tag 'no_image.jpeg', size: '50x50', class: 'rounded-circle mr-1'
+          = current_user.name
+      .users-box
+        .card
+          .card-header
+            | ユーザー
+          .card-body
+            .user.mb-3
+              = image_tag 'no_image.jpeg', size: '40x40', class: 'rounded-circle mr-1'
+              | ダミー京介
+            .user.mb-3
+              = image_tag 'no_image.jpeg', size: '40x40', class: 'rounded-circle mr-1'
+              | ダミー寅泰
+            .user.mb-3
+              = image_tag 'no_image.jpeg', size: '40x40', class: 'rounded-circle mr-1'
+              | ダミー常松
+            .user.mb-3
+              = image_tag 'no_image.jpeg', size: '40x40', class: 'rounded-circle mr-1'
+              | ダミーまこと
+          .card-footer
+            = link_to 'すべて見る', '#'

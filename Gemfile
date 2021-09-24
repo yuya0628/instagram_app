@@ -90,3 +90,5 @@ gem 'mini_magick'
 gem 'faker'
 
 gem 'font-awesome-sass'
+
+gem 'kaminari'

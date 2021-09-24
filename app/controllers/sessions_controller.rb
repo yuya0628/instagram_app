@@ -7,15 +7,15 @@ class SessionsController < ApplicationController
     @user = login(params[:email], params[:password])
 
     if @user
-      redirect_to(root_path, flash: { notice: 'ログインしました' })
+      redirect_to(root_path, success: 'ログインしました')
     else
-      flash[:alert] = 'ログイン失敗'
+      flash[:danger] = 'ログイン失敗'
       render :new
     end
   end
 
   def destroy
     logout
-    redirect_to(login_path, flash: { alert: 'ログアウトしました' })
+    redirect_to(login_path, success: 'ログアウトしました')
   end
 end
