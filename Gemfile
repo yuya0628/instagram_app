@@ -92,3 +92,5 @@ gem 'faker'
 gem 'font-awesome-sass'
 
 gem 'kaminari'
+
+gem 'popper_js'

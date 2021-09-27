@@ -12,6 +12,7 @@
 //
 
 //= require jquery
+//= require popper
 
 //= require rails-ujs
 //= require activestorage
