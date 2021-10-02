@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :require_login, only: %i[new create]
+  skip_before_action :require_login, only: %i[new create index show]
 
   def new
     @user = User.new
@@ -15,6 +15,15 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
+  def index
+    @users = User.all.page(params[:page]).order(created_at: :desc)
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
 
   private
 
