@@ -1,5 +1,16 @@
 {
-  "name": "instagram_app",
+  "name": "package.json",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap-material-design": "^4.1.1",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1",
+    "swiper": "6.4.5"
+  },
+  "version": "1.0.0",
+  "description": "  ",
+  "main": "index.js",
+  "repository": "https://github.com/yuya0628/instagram_app.git",
+  "author": "yuya0628 <sonoyuki13@gmail.com>",
+  "license": "MIT"
 }
