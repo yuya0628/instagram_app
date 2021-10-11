@@ -1,0 +1,12 @@
+  = form_with model: post, local: true, class: 'card-body' do |f|
+        = render partial: 'shared/error_messages',locals:{object: post}
+
+        .form-group
+          = f.label :images, '画像', class: 'bmd-label-floating'
+          = f.file_field :images, multiple: true,class: 'form-control'
+          
+
+        .form-group
+          = f.label :body, 'テキスト', class: 'bmd-label-floating'
+          = f.text_area :body, class: 'form-control'
+        = f.submit '投稿', class: 'btn btn-raised btn-primary'
