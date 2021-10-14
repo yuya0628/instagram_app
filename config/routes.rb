@@ -5,13 +5,16 @@
 #                     login GET    /login(.:format)                                                                         sessions#new
 #                           POST   /login(.:format)                                                                         sessions#create
 #                    logout DELETE /logout(.:format)                                                                        sessions#destroy
-#                     users POST   /users(.:format)                                                                         users#create
+#                     users GET    /users(.:format)                                                                         users#index
+#                           POST   /users(.:format)                                                                         users#create
 #                  new_user GET    /users/new(.:format)                                                                     users#new
+#                      user GET    /users/:id(.:format)                                                                     users#show
 #             post_comments POST   /posts/:post_id/comments(.:format)                                                       comments#create
 #              edit_comment GET    /comments/:id/edit(.:format)                                                             comments#edit
 #                   comment PATCH  /comments/:id(.:format)                                                                  comments#update
 #                           PUT    /comments/:id(.:format)                                                                  comments#update
 #                           DELETE /comments/:id(.:format)                                                                  comments#destroy
+#              search_posts GET    /posts/search(.:format)                                                                  posts#search
 #                     posts GET    /posts(.:format)                                                                         posts#index
 #                           POST   /posts(.:format)                                                                         posts#create
 #                  new_post GET    /posts/new(.:format)                                                                     posts#new
@@ -24,6 +27,9 @@
 #                      like DELETE /likes/:id(.:format)                                                                     likes#destroy
 #             relationships POST   /relationships(.:format)                                                                 relationships#create
 #              relationship DELETE /relationships/:id(.:format)                                                             relationships#destroy
+#       edit_mypage_account GET    /mypage/account/edit(.:format)                                                           mypage/accounts#edit
+#            mypage_account PATCH  /mypage/account(.:format)                                                                mypage/accounts#update
+#                           PUT    /mypage/account(.:format)                                                                mypage/accounts#update
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 # rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
 #        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
@@ -49,4 +55,9 @@ Rails.application.routes.draw do
   end
   resources :likes, only: %i[create destroy]
   resources :relationships, only: %i[create destroy]
+
+  namespace :mypage do
+    resource :account, only:[:edit, :update]
+  end
+
 end
