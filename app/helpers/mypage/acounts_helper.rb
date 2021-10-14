@@ -1,0 +1,2 @@
+module Mypage::AcountsHelper
+end
