@@ -41,6 +41,8 @@ class User < ApplicationRecord
 
   scope :recent, ->(count) { order(created_at: :desc).limit(count) }
 
+  has_many :activities, dependent: :destroy
+
 
   def own?(object)
     id == object.user_id

@@ -33,4 +33,6 @@ class Post < ApplicationRecord
   scope :body_contain, ->(word) { where('posts.body LIKE ?', "%#{word}%") }
   scope :comment_body_contain, ->(word) { joins(:comments).where('comments.body LIKE ?', "%#{word}%") }
   scope :username_contain, ->(word) { joins(:user).where('name LIKE ?', "%#{word}%") }
+
+  has_one :activity, as: :subject, dependent: :destroy
 end
